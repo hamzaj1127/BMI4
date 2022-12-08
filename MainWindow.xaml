@@ -1,0 +1,57 @@
+﻿<Window x:Class="BMICalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BMI4"
+        mc:Ignorable="d"
+        Title="BMI Calculator" Height="700" Width="800"  ResizeMode="NoResize" Background="#FF4A4A4A" Foreground="White">
+    <Grid Background="#FF2F2F2F">
+        <!-- columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <!-- rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <!-- labels -->
+        <Label Grid.Column="1" Content="First Name:" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Grid.RowSpan="2" FontSize="14" Foreground="White"/>
+        <Label Grid.Column="1" Content="Last Name:" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Grid.Column="1" Content="Phone number:" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Grid.Column="1" Content="Height (inches):" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Grid.Column="1" Content="Weight (lbs):" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Label Grid.Column="4" Content="Your BMI is:" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <!-- textboxes -->
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" x:Name="xFirstNameBox" FontSize="14" Background="#FF7B7B7B" Foreground="White"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" x:Name="xLastNameBox" FontSize="14" Foreground="White" Background="#FF7B7B7B"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" x:Name="xPhoneBox" FontSize="14" Background="#FF7B7B7B" Foreground="White"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" x:Name="xHeightInchesBox" FontSize="14" Foreground="White" Background="#FF7B7B7B"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" x:Name="xWeightLbsBox" FontSize="14" Background="#FF7B7B7B" Foreground="White"/>
+        <!-- text blocks -->
+        <TextBlock x:Name="xYourBMIResults" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="BMI Results" Grid.ColumnSpan="4" Grid.RowSpan="3" Width="414" FontWeight="Bold" FontSize="60" Foreground="White" Margin="1,21,0,31" />
+        <TextBlock x:Name="xBMIMessage" Grid.ColumnSpan="5" Grid.Column="3" HorizontalAlignment="Left" Height="166" Grid.Row="3" Grid.RowSpan="4" TextWrapping="Wrap" Text="Message:" VerticalAlignment="Top" Width="412" FontSize="16" Foreground="White" Margin="61,26,0,0" />
+        <!-- buttons -->
+        <Button Grid.Column="1" Content="Submit" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" x:Name="SubmitBtn" FontSize="16" Click="SubmitBtn_Click" Background="#FF7B7B7B" Foreground="White"/>
+        <Button Grid.Column="2" Content="Clear" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" x:Name="ClearBtn" FontSize="16" Click="ClearBtn_Click" Background="#FF7B7B7B" Foreground="White"/>
+        <Button Grid.Column="4" Content="Import" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" x:Name="ImportBtn" FontSize="16" Click="ImportBtn_Click" Background="#FF7B7B7B" Foreground="White"/>
+        <Button Grid.Column="6" Content="Exit" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" x:Name="ExitBtn" FontSize="16" Click="ExitBtn_Click" Background="#FF7B7B7B" Foreground="White"/>
+        <!-- datagrid -->
+        <DataGrid x:Name="xDataGrid" AutoGenerateColumns="True" Grid.Column="1" HorizontalAlignment="Left" Height="257" Grid.Row="7" VerticalAlignment="Top" Width="722" Grid.ColumnSpan="6" Background="#FF252525" BorderBrush="#FF002D5A" Foreground="#FF121212" AlternatingRowBackground="#FFF1F1F1" HorizontalGridLinesBrush="#FFD2D2D2" VerticalGridLinesBrush="#FFD2D2D2" RowBackground="#FFBBBBBB" />
+    </Grid>
+</Window>
